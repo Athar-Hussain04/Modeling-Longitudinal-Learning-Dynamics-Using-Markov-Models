@@ -1,0 +1,4 @@
+trajectory,size,prototype_sequence,active_share,average_share,disengaged_share,trajectory_label,mean_final_grade
+1,31,"['Average', 'Disengaged', 'Disengaged', 'Disengaged', 'Disengaged', 'Disengaged', 'Disengaged', 'Disengaged']",0.004032258064516129,0.2782258064516129,0.717741935483871,Mostly disengaged,62.3070564516129
+2,45,"['Active', 'Active', 'Active', 'Active', 'Active', 'Active', 'Active', 'Active']",0.8166666666666667,0.16944444444444445,0.013888888888888888,Mostly active,73.40777777777778
+3,66,"['Average', 'Average', 'Average', 'Average', 'Average', 'Average', 'Average', 'Average']",0.1590909090909091,0.6875,0.1534090909090909,Mostly average,67.35876893939394

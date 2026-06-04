@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modeling Longitudinal Learning Dynamics Using Markov Models</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="vendor/project-shell.css">
+    <script src="vendor/plotly-2.35.2.min.js"></script>
+    <script src="vendor/project-shell.js" defer></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">BSIT Final Year Project</p>
+                <h1>Modeling Longitudinal Learning Dynamics Using Markov Models</h1>
+                <p class="hero-copy">
+                    A Python implementation of the VaSSTra method (Variables to States to Trajectories) that models
+                    longitudinal learning dynamics: it converts weekly engagement indicators into latent states, groups
+                    full state sequences into learner trajectories, and lets you test a manual state sequence against the
+                    discovered patterns.
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <h2>Total Records</h2>
+                    <p class="stat-value" id="totalRecords">--</p>
+                </article>
+                <article class="stat-card accent-card">
+                    <h2>Unique Students</h2>
+                    <p class="stat-value" id="uniqueStudents">--</p>
+                </article>
+                <article class="stat-card muted-card">
+                    <h2>States</h2>
+                    <p class="stat-value" id="chosenStates">--</p>
+                </article>
+                <article class="stat-card muted-card">
+                    <h2>Trajectories</h2>
+                    <p class="stat-value" id="chosenTrajectories">--</p>
+                </article>
+            </section>
+
+            <section class="panel-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h2>State Model Selection</h2>
+                        <p>BIC and AIC across Gaussian-mixture state solutions.</p>
+                    </div>
+                    <div class="chart" id="stateModelChart"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h2>Trajectory Validation</h2>
+                        <p>Silhouette scores for candidate trajectory clusters.</p>
+                    </div>
+                    <div class="chart" id="trajectoryValidationChart"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading with-controls">
+                        <div>
+                            <h2>State Profiles</h2>
+                            <p>Average standardized indicators for each latent engagement state.</p>
+                        </div>
+                        <select id="stateSelect"></select>
+                    </div>
+                    <div class="chart" id="stateProfileChart"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h2>Trajectory Prototypes</h2>
+                        <p>Dominant eight-step state sequences for each discovered trajectory.</p>
+                    </div>
+                    <div class="prototype-list" id="trajectoryPrototypeList"></div>
+                </article>
+            </section>
+
+            <section class="panel manual-panel">
+                <div class="panel-heading">
+                    <h2>Manual State Sequence Demo</h2>
+                    <p>Select a state for each time point to estimate the closest trajectory.</p>
+                </div>
+                <div class="manual-layout">
+                    <form id="manualForm" class="input-grid"></form>
+                    <div class="manual-output">
+                        <div class="result-card" id="manualSummary">Awaiting manual state input.</div>
+                        <div class="chart compact-chart" id="manualTrajectoryChart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel wide-panel">
+                <div class="panel-heading with-controls">
+                    <div>
+                        <h2>Trajectory Samples</h2>
+                        <p>Student trajectories exported by the packaged Python backend.</p>
+                    </div>
+                    <div class="table-controls">
+                        <input id="studentSearch" type="search" placeholder="Search by student id">
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Trajectory</th>
+                                <th>Final Grade</th>
+                                <th>State Sequence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sampleTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel status-panel">
+                <h2>Backend Status</h2>
+                <p id="statusMessage">Loading dashboard data...</p>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

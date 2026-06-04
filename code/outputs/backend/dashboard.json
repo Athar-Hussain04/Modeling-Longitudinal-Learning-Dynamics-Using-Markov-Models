@@ -1,0 +1,1108 @@
+{
+  "project": {
+    "title": "Modeling Longitudinal Learning Dynamics Using Markov Models",
+    "generated_at": "2026-06-02 10:50:33",
+    "backend": "Python",
+    "method": "VaSSTra (Variables-States-Trajectories), implemented in Python",
+    "source_notebook": "notebook/vasstra_python.ipynb"
+  },
+  "overview": {
+    "total_records": 1136,
+    "unique_students": 142,
+    "chosen_states": 3,
+    "chosen_trajectories": 3,
+    "average_final_grade": 68.17
+  },
+  "state_model_selection": [
+    {
+      "components": 2,
+      "bic": 21710.78,
+      "aic": 21544.62
+    },
+    {
+      "components": 3,
+      "bic": 20102.76,
+      "aic": 19850.99
+    },
+    {
+      "components": 4,
+      "bic": 19330.89,
+      "aic": 18993.53
+    },
+    {
+      "components": 5,
+      "bic": 19008.15,
+      "aic": 18585.19
+    }
+  ],
+  "trajectory_validation": [
+    {
+      "clusters": 2,
+      "silhouette": 0.2534
+    },
+    {
+      "clusters": 3,
+      "silhouette": 0.2627
+    },
+    {
+      "clusters": 4,
+      "silhouette": 0.2378
+    },
+    {
+      "clusters": 5,
+      "silhouette": 0.2394
+    }
+  ],
+  "state_profiles": [
+    {
+      "State": "Active",
+      "Freq_Course_View": 0.982,
+      "Freq_Forum_Consume": 0.86,
+      "Freq_Forum_Contribute": 0.634,
+      "Freq_Lecture_View": 0.664,
+      "Regularity_Course_View": 0.861,
+      "Session_Count": 1.039,
+      "Total_Duration": 0.917,
+      "Active_Days": 0.918,
+      "StateID": 3
+    },
+    {
+      "State": "Average",
+      "Freq_Course_View": -0.152,
+      "Freq_Forum_Consume": -0.075,
+      "Freq_Forum_Contribute": -0.02,
+      "Freq_Lecture_View": -0.078,
+      "Regularity_Course_View": -0.034,
+      "Session_Count": -0.118,
+      "Total_Duration": -0.123,
+      "Active_Days": -0.045,
+      "StateID": 2
+    },
+    {
+      "State": "Disengaged",
+      "Freq_Course_View": -1.125,
+      "Freq_Forum_Consume": -1.095,
+      "Freq_Forum_Contribute": -0.872,
+      "Freq_Lecture_View": -0.807,
+      "Regularity_Course_View": -1.173,
+      "Session_Count": -1.271,
+      "Total_Duration": -1.087,
+      "Active_Days": -1.233,
+      "StateID": 1
+    }
+  ],
+  "trajectory_profiles": [
+    {
+      "trajectory": 1,
+      "size": 31,
+      "prototype_sequence": [
+        "Average",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged"
+      ],
+      "active_share": 0.004,
+      "average_share": 0.278,
+      "disengaged_share": 0.718,
+      "trajectory_label": "Mostly disengaged",
+      "mean_final_grade": 62.307
+    },
+    {
+      "trajectory": 2,
+      "size": 45,
+      "prototype_sequence": [
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active"
+      ],
+      "active_share": 0.817,
+      "average_share": 0.169,
+      "disengaged_share": 0.014,
+      "trajectory_label": "Mostly active",
+      "mean_final_grade": 73.408
+    },
+    {
+      "trajectory": 3,
+      "size": 66,
+      "prototype_sequence": [
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average"
+      ],
+      "active_share": 0.159,
+      "average_share": 0.688,
+      "disengaged_share": 0.153,
+      "trajectory_label": "Mostly average",
+      "mean_final_grade": 67.359
+    }
+  ],
+  "manual_demo": {
+    "states": [
+      "Disengaged",
+      "Average",
+      "Active"
+    ],
+    "field_schema": [
+      {
+        "name": "step_1",
+        "label": "Course Sequence 1",
+        "default": "Average"
+      },
+      {
+        "name": "step_2",
+        "label": "Course Sequence 2",
+        "default": "Average"
+      },
+      {
+        "name": "step_3",
+        "label": "Course Sequence 3",
+        "default": "Average"
+      },
+      {
+        "name": "step_4",
+        "label": "Course Sequence 4",
+        "default": "Average"
+      },
+      {
+        "name": "step_5",
+        "label": "Course Sequence 5",
+        "default": "Average"
+      },
+      {
+        "name": "step_6",
+        "label": "Course Sequence 6",
+        "default": "Average"
+      },
+      {
+        "name": "step_7",
+        "label": "Course Sequence 7",
+        "default": "Average"
+      },
+      {
+        "name": "step_8",
+        "label": "Course Sequence 8",
+        "default": "Average"
+      }
+    ],
+    "prototype_sequences": {
+      "Mostly disengaged": [
+        "Average",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged",
+        "Disengaged"
+      ],
+      "Mostly active": [
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active",
+        "Active"
+      ],
+      "Mostly average": [
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average",
+        "Average"
+      ]
+    }
+  },
+  "feature_columns": [
+    "Freq_Course_View",
+    "Freq_Forum_Consume",
+    "Freq_Forum_Contribute",
+    "Freq_Lecture_View",
+    "Regularity_Course_View",
+    "Session_Count",
+    "Total_Duration",
+    "Active_Days"
+  ],
+  "feature_labels": {
+    "Freq_Course_View": "Course Views",
+    "Freq_Forum_Consume": "Forum Reading",
+    "Freq_Forum_Contribute": "Forum Posting",
+    "Freq_Lecture_View": "Lecture Views",
+    "Regularity_Course_View": "Course-View Regularity",
+    "Session_Count": "Session Count",
+    "Total_Duration": "Total Duration",
+    "Active_Days": "Active Days"
+  },
+  "samples": [
+    {
+      "UserID": "00050F0E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 77.37375,
+      "state_sequence": "Average -> Disengaged -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "006DD50A",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 64.39625,
+      "state_sequence": "Average -> Active -> Average -> Average -> Average -> Average -> Disengaged -> Average"
+    },
+    {
+      "UserID": "05D0E111",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 55.3325,
+      "state_sequence": "Average -> Disengaged -> Average -> Average -> Average -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "0637AF03",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 64.0275,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "065F7507",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 65.07,
+      "state_sequence": "Disengaged -> Disengaged -> Average -> Disengaged -> Average -> Average -> Average -> Disengaged"
+    },
+    {
+      "UserID": "06AC3EDE",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 71.69125,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Average -> Disengaged -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "08972814",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.05125,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Average -> Disengaged -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "089734B8",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 57.92875,
+      "state_sequence": "Average -> Average -> Disengaged -> Average -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "0A30CA6E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 55.83375,
+      "state_sequence": "Active -> Average -> Active -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "13FE5766",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 90.38125,
+      "state_sequence": "Active -> Active -> Average -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "16AD6797",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.41375,
+      "state_sequence": "Average -> Active -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "173E67ED",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 57.86875,
+      "state_sequence": "Disengaged -> Average -> Active -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "1B48F5BA",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 82.6375,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "21EA54F8",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 68.98625,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "2926CF64",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 47.55625,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "2A696D18",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 65.13,
+      "state_sequence": "Average -> Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "2AE7F682",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 68.345,
+      "state_sequence": "Average -> Active -> Active -> Active -> Disengaged -> Average -> Average -> Disengaged"
+    },
+    {
+      "UserID": "2B39FC2C",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 69.13875,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Average -> Average"
+    },
+    {
+      "UserID": "2B76A25A",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 75.75,
+      "state_sequence": "Active -> Active -> Average -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "2BF883ED",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 75.82625,
+      "state_sequence": "Active -> Active -> Average -> Average -> Active -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "2BF89F41",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 79.405,
+      "state_sequence": "Active -> Average -> Average -> Average -> Average -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "2BF8A619",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 74.78625,
+      "state_sequence": "Active -> Active -> Active -> Average -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "2BF8BAB5",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 76.46875,
+      "state_sequence": "Average -> Active -> Active -> Average -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "2BF8C805",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 75.855,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "2DA4DA46",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.59125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "33ED839D",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.05125,
+      "state_sequence": "Active -> Average -> Disengaged -> Average -> Average -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "347FE229",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 79.94,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "3787BEA1",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 68.275,
+      "state_sequence": "Average -> Disengaged -> Average -> Disengaged -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "37C40B2F",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 62.5375,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "38E0C847",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.06875,
+      "state_sequence": "Average -> Average -> Average -> Active -> Active -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "3CC940F5",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 68.48375,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "3D1B4803",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 75.145,
+      "state_sequence": "Disengaged -> Disengaged -> Average -> Average -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "3E0811B0",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 83.34625,
+      "state_sequence": "Active -> Active -> Average -> Average -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "3E683139",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 56.47625,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Average -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "3E684389",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 59.78875,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "3E685F25",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 69.62875,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "3E687AD1",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 66.89375,
+      "state_sequence": "Disengaged -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "3F72A9F3",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 83.95125,
+      "state_sequence": "Average -> Average -> Disengaged -> Average -> Active -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "41529D67",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 58.16125,
+      "state_sequence": "Average -> Average -> Average -> Active -> Average -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "4283C0D0",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 76.17875,
+      "state_sequence": "Active -> Active -> Active -> Average -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "43CE036B",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 66.1475,
+      "state_sequence": "Average -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "445C62DF",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 72.82375,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "481F3672",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 72.82375,
+      "state_sequence": "Average -> Active -> Average -> Average -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "4AAE9BB2",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.61625,
+      "state_sequence": "Disengaged -> Average -> Average -> Average -> Average -> Average -> Disengaged -> Active"
+    },
+    {
+      "UserID": "4E2B9146",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 75.63125,
+      "state_sequence": "Average -> Active -> Active -> Average -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "4E4846BE",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 74.90625,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "4E485A12",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 81.725,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "51A82B85",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 78.39875,
+      "state_sequence": "Active -> Active -> Active -> Active -> Average -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "54EE2A89",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.5425,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "579A8B88",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 71.94625,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "5F9F6279",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 59.2,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "60663E96",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 74.415,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "611C86D5",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 76.45625,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "612708C8",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 74.78125,
+      "state_sequence": "Average -> Active -> Active -> Active -> Average -> Active -> Average -> Average"
+    },
+    {
+      "UserID": "61271464",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 75.37,
+      "state_sequence": "Active -> Active -> Active -> Average -> Active -> Active -> Active -> Average"
+    },
+    {
+      "UserID": "61272D3C",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 78.70625,
+      "state_sequence": "Disengaged -> Average -> Active -> Active -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "61273190",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 81.9075,
+      "state_sequence": "Active -> Average -> Average -> Average -> Active -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "612766D4",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 68.21,
+      "state_sequence": "Average -> Average -> Average -> Active -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "67F45F22",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 72.95125,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "69AA2409",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 63.73875,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Active -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "6CF914F8",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 64.7025,
+      "state_sequence": "Active -> Average -> Active -> Active -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "72C883A2",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 70.10375,
+      "state_sequence": "Disengaged -> Disengaged -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "74B79FE8",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 69.625,
+      "state_sequence": "Average -> Average -> Active -> Average -> Active -> Active -> Active -> Average"
+    },
+    {
+      "UserID": "74B7C8AC",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 62.25125,
+      "state_sequence": "Disengaged -> Average -> Average -> Average -> Disengaged -> Average -> Average -> Disengaged"
+    },
+    {
+      "UserID": "74B7D400",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 65.17,
+      "state_sequence": "Disengaged -> Active -> Average -> Average -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "74B7F1F4",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 63.54,
+      "state_sequence": "Average -> Average -> Disengaged -> Average -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "775501BE",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 61.04375,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "777CB81A",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 61.305,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "7B61F926",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 73.97,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "7C6124C9",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 63.50125,
+      "state_sequence": "Average -> Active -> Active -> Average -> Active -> Active -> Average -> Active"
+    },
+    {
+      "UserID": "7F84927E",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 74.77,
+      "state_sequence": "Active -> Active -> Active -> Active -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "80213F7A",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.70125,
+      "state_sequence": "Active -> Active -> Active -> Average -> Average -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "80EF3C8F",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 57.75625,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Average -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "84101D4B",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 58.75,
+      "state_sequence": "Average -> Average -> Average -> Average -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "88B88C8A",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 73.385,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "88B89026",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 69.215,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Average"
+    },
+    {
+      "UserID": "88B8B5D2",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 65.65,
+      "state_sequence": "Active -> Average -> Average -> Active -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "935CB9FC",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 63.22625,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "94950CE3",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 66.45375,
+      "state_sequence": "Active -> Active -> Active -> Active -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "94CED848",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 68.475,
+      "state_sequence": "Active -> Active -> Active -> Active -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "985AFF35",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 57.76625,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "9CB99B43",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 61.8175,
+      "state_sequence": "Average -> Active -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "9D283E5E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 70.42125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "9D285042",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 79.1625,
+      "state_sequence": "Average -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "9D28691A",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 70.66,
+      "state_sequence": "Disengaged -> Average -> Average -> Average -> Disengaged -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "9D2875B6",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 76.8075,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "9EB92BD1",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 78.76375,
+      "state_sequence": "Average -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "A143CD8D",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 68.21625,
+      "state_sequence": "Average -> Active -> Active -> Active -> Active -> Active -> Average -> Active"
+    },
+    {
+      "UserID": "A9B1C803",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 69.775,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "A9D91207",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 64.4325,
+      "state_sequence": "Average -> Active -> Active -> Active -> Average -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "AB944042",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 57.38875,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "ABDF3B2F",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 71.32875,
+      "state_sequence": "Active -> Average -> Active -> Average -> Active -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "AF1628E9",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 58.96875,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "AF83680E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 67.06875,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Disengaged -> Average"
+    },
+    {
+      "UserID": "AFEBB20A",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 66.02,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average"
+    },
+    {
+      "UserID": "B18E3C42",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 76.78125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "B235D544",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 74.7125,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "B2BB60FE",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 54.39625,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average"
+    },
+    {
+      "UserID": "B61C5DF6",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 64.75375,
+      "state_sequence": "Average -> Average -> Active -> Average -> Disengaged -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "BA2AB888",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 70.4675,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Active -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "BA837798",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 77.3375,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "BBF9CFDB",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 63.59125,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Average -> Active -> Average -> Average"
+    },
+    {
+      "UserID": "BC6BAE6F",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 64.14625,
+      "state_sequence": "Disengaged -> Average -> Average -> Average -> Disengaged -> Disengaged -> Disengaged -> Active"
+    },
+    {
+      "UserID": "BD11162C",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.75,
+      "state_sequence": "Average -> Disengaged -> Average -> Active -> Disengaged -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "BE47C2E3",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 61.60625,
+      "state_sequence": "Average -> Average -> Average -> Average -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "C1ADBCB4",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 72.31625,
+      "state_sequence": "Average -> Average -> Average -> Average -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "C22A59A5",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 73.45875,
+      "state_sequence": "Active -> Active -> Active -> Average -> Average -> Active -> Average -> Average"
+    },
+    {
+      "UserID": "C26707AF",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 75.78125,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Average -> Average -> Active"
+    },
+    {
+      "UserID": "C2671B03",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.2925,
+      "state_sequence": "Disengaged -> Average -> Disengaged -> Average -> Disengaged -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "C267225B",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 60.635,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "C2673EF7",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 64.03625,
+      "state_sequence": "Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "C26769B3",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 59.9125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "C36CEDF1",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 69.08,
+      "state_sequence": "Average -> Active -> Active -> Active -> Active -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "C63FDD00",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 59.09125,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Average -> Average -> Disengaged"
+    },
+    {
+      "UserID": "C83FF0BD",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 50.91375,
+      "state_sequence": "Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged"
+    },
+    {
+      "UserID": "CBDA4F2D",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 71.765,
+      "state_sequence": "Active -> Active -> Active -> Average -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "D2C5F64E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 50.565,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Active -> Active -> Active -> Average -> Active"
+    },
+    {
+      "UserID": "D3E743C9",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 64.39125,
+      "state_sequence": "Average -> Average -> Disengaged -> Disengaged -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "D447B3FC",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 83.255,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "D7E3D0DC",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 54.09125,
+      "state_sequence": "Active -> Active -> Disengaged -> Active -> Active -> Active -> Active -> Average"
+    },
+    {
+      "UserID": "D7F7C7CB",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 73.67375,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Average"
+    },
+    {
+      "UserID": "D7F7DB67",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 76.6075,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "D7F7FE93",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 79.17875,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "D92F8056",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 55.21125,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "DEDB455E",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 73.4225,
+      "state_sequence": "Average -> Disengaged -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "E2058149",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 62.79125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Active -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "E37F390A",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 67.12375,
+      "state_sequence": "Active -> Active -> Active -> Average -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "E597E0FD",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 77.05,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "E7397CA8",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 77.81,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Active -> Active"
+    },
+    {
+      "UserID": "E908CA93",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 63.4525,
+      "state_sequence": "Average -> Disengaged -> Average -> Average -> Disengaged -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "EB0D8430",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 63.30125,
+      "state_sequence": "Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Disengaged -> Average -> Disengaged"
+    },
+    {
+      "UserID": "EC5BFA62",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 62.57,
+      "state_sequence": "Active -> Average -> Active -> Average -> Disengaged -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "ED560D33",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 57.42875,
+      "state_sequence": "Average -> Average -> Disengaged -> Active -> Active -> Average -> Disengaged -> Active"
+    },
+    {
+      "UserID": "ED8FF4BE",
+      "trajectory_label": "Mostly disengaged",
+      "Final_Grade": 55.67125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Disengaged -> Disengaged -> Disengaged"
+    },
+    {
+      "UserID": "EDA58A0A",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 84.58125,
+      "state_sequence": "Active -> Active -> Active -> Active -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "EE9AAB27",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 72.37125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "EFC42628",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 62.30875,
+      "state_sequence": "Disengaged -> Active -> Active -> Active -> Active -> Active -> Active -> Active"
+    },
+    {
+      "UserID": "F81CEC88",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 71.0725,
+      "state_sequence": "Active -> Active -> Active -> Active -> Active -> Average -> Active -> Active"
+    },
+    {
+      "UserID": "F89100C7",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 54.76875,
+      "state_sequence": "Active -> Active -> Average -> Average -> Active -> Active -> Disengaged -> Active"
+    },
+    {
+      "UserID": "F898AC49",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 70.5125,
+      "state_sequence": "Average -> Average -> Average -> Average -> Average -> Average -> Active -> Average"
+    },
+    {
+      "UserID": "FA754C15",
+      "trajectory_label": "Mostly average",
+      "Final_Grade": 60.3575,
+      "state_sequence": "Disengaged -> Average -> Average -> Disengaged -> Average -> Average -> Average -> Average"
+    },
+    {
+      "UserID": "FE2E4C85",
+      "trajectory_label": "Mostly active",
+      "Final_Grade": 82.89375,
+      "state_sequence": "Active -> Active -> Average -> Active -> Active -> Active -> Active -> Active"
+    }
+  ]
+}

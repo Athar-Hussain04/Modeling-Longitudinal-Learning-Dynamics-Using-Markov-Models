@@ -1,0 +1,139 @@
+body.fyp-shell-enhanced {
+    padding-top: 0;
+}
+
+.fyp-utility-bar {
+    position: fixed;
+    top: 10px;
+    left: 14px;
+    right: 14px;
+    z-index: 1000;
+    transform: translateY(calc(-100% - 24px));
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(145deg, rgba(14, 21, 30, 0.92), rgba(31, 47, 66, 0.88));
+    box-shadow: 0 18px 40px rgba(9, 14, 20, 0.28);
+    backdrop-filter: blur(16px);
+    color: #f5f7fb;
+}
+
+/* Auto-hide: the bar stays tucked above the viewport and slides in when the
+   cursor reaches the top edge (hover zone), when hovered, or when focused. */
+.fyp-shell-hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 16px;
+    z-index: 1001;
+}
+
+.fyp-shell-hover-zone:hover ~ .fyp-utility-bar,
+.fyp-utility-bar:hover,
+.fyp-utility-bar:focus-within {
+    transform: translateY(0);
+}
+
+.fyp-utility-meta,
+.fyp-utility-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fyp-utility-meta {
+    flex: 1 1 auto;
+}
+
+.fyp-utility-links {
+    justify-content: flex-end;
+}
+
+.fyp-utility-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(219, 232, 255, 0.72);
+    font-weight: 700;
+}
+
+.fyp-utility-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.fyp-utility-chip,
+.fyp-utility-links a,
+.fyp-utility-links button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(197, 219, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f7fb;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-family: inherit;
+}
+
+.fyp-utility-links button,
+.fyp-utility-chip.is-button {
+    cursor: pointer;
+}
+
+.fyp-utility-links a:hover,
+.fyp-utility-links button:hover,
+.fyp-utility-chip.is-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.fyp-utility-chip.is-live {
+    background: rgba(72, 185, 126, 0.18);
+    color: #dff8e8;
+}
+
+.fyp-utility-chip.is-missing {
+    background: rgba(230, 141, 90, 0.18);
+    color: #ffe8d7;
+}
+
+.fyp-utility-chip.is-live-mode {
+    background: rgba(69, 145, 255, 0.2);
+    color: #dfecff;
+}
+
+.fyp-utility-generated {
+    color: rgba(232, 239, 250, 0.78);
+    font-size: 0.84rem;
+}
+
+@media (max-width: 1160px) {
+    body.fyp-shell-enhanced {
+        padding-top: 0;
+    }
+
+    .fyp-utility-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fyp-utility-links {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 760px) {
+    body.fyp-shell-enhanced {
+        padding-top: 0;
+    }
+}
